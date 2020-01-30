@@ -196,6 +196,7 @@ func Provider() tfbridge.ProviderInfo {
 			"cloudflare_waf_rules":    {Tok: makeDataSource(mainMod, "getWafRules")},
 		},
 		JavaScript: &tfbridge.JavaScriptInfo{
+			AsyncDataSources: true,
 			// List any npm dependencies and their versions
 			Dependencies: map[string]string{
 				"@pulumi/pulumi": "feature-2.0",
